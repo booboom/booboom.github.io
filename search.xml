@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[小程序设置动态分享数据 - Taro]]></title>
+    <url>%2Farchive%2Ftaro-mp-share.html</url>
+    <content type="text"><![CDATA[前几天遇到一个需求是这样的，一个活动的list，每一个活动都有一个分享按钮，点击分享按钮，将当前活动的详情页分享出去，附带上标题，图片。我第一时间想到的就是，直接获取Current。修改Current.page.onShareAppMessage不就好了么，然后我要开始写bug的时候，脑中灵光一现，发觉事情并没有这么简单。因为小程序onShareAppMeaasge生命周期是在页面初始化时就定义好的，点击button后直接调用，修改完全没有效果。之后我就想到用button的dataset来给onShareAppMessage传参数，结果，button上的data-*属性都被Taro给清除了。淦！最后，通过使用 async/await 实现了这个功能，具体代码如下：parent:&lt;template> &lt;view class="list-container"> &lt;block v-if="list.length"> &lt;product-card :shareData.sync="shareData" class="card-container" v-for="item in list" :key="item.id" :info="item" >&lt;/product-card> &lt;/block> &lt;/view> &lt;/template> &lt;script> import Taro, { Current } from '@tarojs/taro'; export default { data() { return { shareData: {} } } created() { Current.page!.onShareAppMessage = async () => { await new Promise((resolve, reject) => { setTimeout(() => { resolve(this.shareData) }, 0) }) return this.shareData } } } &lt;/script> child:&lt;template> &lt;button @tap="handleShareClick" open-type="share" class="btm-btn" >分享&lt;/button> &lt;/template> &lt;script> export default { name: 'ProductCard' props: { info: Object }, methods: { handleShareClick() { this.$emit('update:shareData', { title: this.info.name, imageUrl: this.info.pic.includes('http') ? this.info.pic : `https:${this.info.pic}`, path: `pages/activity-detail/activity-detail?id=${this.info.activityId}` }) } } } &lt;/script>]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>Taro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Egg + MongoDB搭建server端服务]]></title>
+    <url>%2Farchive%2FeggNodeSercer.html</url>
+    <content type="text"><![CDATA[Egg 官方文档快速初始化推荐直接使用脚手架，只需几条简单指令，即可快速生成项目（npm &gt;=6.1.0）$ mkdir egg-example && cd egg-example $ npm init egg --type=simple $ npm i 启动项目：$ npm run dev $ open http://localhost:7001 ####]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Node</tag>
+        <tag>Egg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[网页自动跟随系统暗模式]]></title>
     <url>%2Farchive%2FperfersColorScheme.html</url>
     <content type="text"><![CDATA[暗模式已经逐渐成为各个软件和网页的新趋势，过去入股偶想要增加暗模式，你可能需要给用户一个选项来开启暗模式。现在大多数主流浏览器都支持了对检验颜色主题的支持，让网页可以自动跟随系统UI模式。介绍下我们今天的主角prefers-color-scheme CSS 媒体特性用于检测用户是否有将系统的主题色设置为亮色或者暗色。浏览器兼容性可以去这里查看动手测试一下新建一个简单的html页面test.html&lt;!DOCTYPE html> &lt;html> &lt;head> &lt;meta charset="UTF-8"> &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"> &lt;title>暗模式&lt;/title> &lt;style> body { background: white; color: black; } &lt;/style> &lt;/head> &lt;body> &lt;h1>测试跟随暗模式&lt;/h1> &lt;p>哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈&lt;/p> &lt;/body> &lt;/html> 接下来在css中加入：@media (prefers-color-scheme: dark) { body { background: black; color: white; } } 切换系统为暗模式。##]]></content>
@@ -126,8 +149,8 @@
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>爬虫</tag>
         <tag>mysql</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
