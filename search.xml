@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[小程序踩坑之navigationStyle]]></title>
+    <url>%2Farchive%2Fmp-fuck.html</url>
+    <content type="text"><![CDATA[小程序自定义顶部导航经常会遇到 navigationStyle: &#39;custom&#39; 失效的问题，同时出现了两个顶部导航。遇到这种问题不妨可以尝试一下：重启 微信开发者工具 🙂]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>踩坑</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[小程序设置动态分享数据 - Taro]]></title>
     <url>%2Farchive%2Ftaro-mp-share.html</url>
     <content type="text"><![CDATA[前几天遇到一个需求是这样的，一个活动的list，每一个活动都有一个分享按钮，点击分享按钮，将当前活动的详情页分享出去，附带上标题，图片。我第一时间想到的就是，直接获取Current。修改Current.page.onShareAppMessage不就好了么，然后我要开始写bug的时候，脑中灵光一现，发觉事情并没有这么简单。因为小程序onShareAppMeaasge生命周期是在页面初始化时就定义好的，点击button后直接调用，修改完全没有效果。之后我就想到用button的dataset来给onShareAppMessage传参数，结果，button上的data-*属性都被Taro给清除了。淦！最后，通过使用 async/await 实现了这个功能，具体代码如下：parent:&lt;template> &lt;view class="list-container"> &lt;block v-if="list.length"> &lt;product-card :shareData.sync="shareData" class="card-container" v-for="item in list" :key="item.id" :info="item" >&lt;/product-card> &lt;/block> &lt;/view> &lt;/template> &lt;script> import Taro, { Current } from '@tarojs/taro'; export default { data() { return { shareData: {} } } created() { Current.page!.onShareAppMessage = async () => { await new Promise((resolve, reject) => { setTimeout(() => { resolve(this.shareData) }, 0) }) return this.shareData } } } &lt;/script> child:&lt;template> &lt;button @tap="handleShareClick" open-type="share" class="btm-btn" >分享&lt;/button> &lt;/template> &lt;script> export default { name: 'ProductCard' props: { info: Object }, methods: { handleShareClick() { this.$emit('update:shareData', { title: this.info.name, imageUrl: this.info.pic.includes('http') ? this.info.pic : `https:${this.info.pic}`, path: `pages/activity-detail/activity-detail?id=${this.info.activityId}` }) } } } &lt;/script>]]></content>
