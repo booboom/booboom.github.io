@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[宇宙级好用的MarkDown编辑器]]></title>
+    <url>%2Farchive%2Ftypora-and-uPic.html</url>
+    <content type="text"><![CDATA[我最开始接触Typora的时候，就是被它的高颜值所俘虏，成为了它的颜狗。与传统的MarkDown编辑器左边写md，右边预览的模式不同，Typora实现了实时预览，所见即所得，并且没有什么花里胡哨的顶部功能栏，一切从简，简约大方，搭配另一宇宙级好用的图床工具 - uPic，简直如虎添翼。最近为爱发电了6年的Typora开始收费了，作为它的重度使用者，必须支持一波，奥利给。]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[css文本尾部标签跟随文本自动换行]]></title>
     <url>%2Farchive%2Ftext-tag-wrap.html</url>
     <content type="text"><![CDATA[在开发中，经常会遇到在title后加一个tag，在title文本过多换行时，要求tag在文本末尾也跟着换行。看起来很简单的样式，其实也不太好实现。借助Array.prototype.split(&#39;&#39;)将title字段没个字都切割出来为一个数组。再遍历数组将没个字单独放在一个div中，tag在所有div之后。最后对父元素做flex布局。display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap;]]></content>

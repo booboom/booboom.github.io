@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://booboom.github.io/archive/typora-and-uPic.html</loc>
+    
+    <lastmod>2021-12-02T07:40:47.671Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://booboom.github.io/about/index.html</loc>
+    
+    <lastmod>2021-12-02T07:18:39.227Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://booboom.github.io/archive/react-beautiful-dnd.html</loc>
     
     <lastmod>2021-12-02T07:04:42.180Z</lastmod>
@@ -65,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://booboom.github.io/archive/webpack-config.html</loc>
-    
-    <lastmod>2020-09-04T10:34:19.910Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://booboom.github.io/archive/crontab.html</loc>
     
     <lastmod>2020-09-04T10:34:19.910Z</lastmod>
@@ -86,7 +93,7 @@
   </url>
   
   <url>
-    <loc>https://booboom.github.io/resume/index.html</loc>
+    <loc>https://booboom.github.io/tag/index.html</loc>
     
     <lastmod>2020-09-04T10:34:19.910Z</lastmod>
     
@@ -142,14 +149,14 @@
   </url>
   
   <url>
-    <loc>https://booboom.github.io/archive/macPrivoxy.html</loc>
+    <loc>https://booboom.github.io/archive/javaScript-call-init.html</loc>
     
     <lastmod>2020-09-04T10:34:19.910Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://booboom.github.io/archive/javaScript-call-init.html</loc>
+    <loc>https://booboom.github.io/archive/music_shuaidie.html</loc>
     
     <lastmod>2020-09-04T10:34:19.910Z</lastmod>
     
@@ -226,7 +233,7 @@
   </url>
   
   <url>
-    <loc>https://booboom.github.io/about/index.html</loc>
+    <loc>https://booboom.github.io/archive/webpack-config.html</loc>
     
     <lastmod>2020-09-04T10:34:19.910Z</lastmod>
     
@@ -254,28 +261,14 @@
   </url>
   
   <url>
-    <loc>https://booboom.github.io/group/index.html</loc>
-    
-    <lastmod>2020-09-04T10:34:19.910Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://booboom.github.io/top/index.html</loc>
-    
-    <lastmod>2020-09-04T10:34:19.910Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://booboom.github.io/tag/index.html</loc>
-    
-    <lastmod>2020-09-04T10:34:19.910Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://booboom.github.io/search/index.html</loc>
+    
+    <lastmod>2020-09-04T10:34:19.910Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://booboom.github.io/group/index.html</loc>
     
     <lastmod>2020-09-04T10:34:19.910Z</lastmod>
     
@@ -289,7 +282,21 @@
   </url>
   
   <url>
-    <loc>https://booboom.github.io/archive/music_shuaidie.html</loc>
+    <loc>https://booboom.github.io/top/index.html</loc>
+    
+    <lastmod>2020-09-04T10:34:19.910Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://booboom.github.io/resume/index.html</loc>
+    
+    <lastmod>2020-09-04T10:34:19.910Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://booboom.github.io/archive/macPrivoxy.html</loc>
     
     <lastmod>2020-09-04T10:34:19.910Z</lastmod>
     
